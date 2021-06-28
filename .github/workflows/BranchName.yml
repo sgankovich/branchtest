@@ -1,9 +1,8 @@
 name: Branch Name
 on:
-  push:
-    branches-ignore:
-      - '[Cc][Cc][Oo][Ee]*'
-      - 'main'
+  pull_request:
+    branches:
+      - main
 jobs:
   branch_name:
     runs-on: ubuntu-latest
@@ -11,4 +10,9 @@ jobs:
     steps:
       - name: Display the error message
         run: |
-                echo "$GITHUB_REF"
+                echo ${GITHUB_BRANCH##*/}
+                if [[ ${GITHUB_BRANCH##*/} != *"CCOE"* ]]
+                then
+                  echo "ERROR: Incorrect branch name. Please amend branch name and try again. Correct branch name should start with JiraPro story number (CCOE or ccoe or CCoE)"
+                  exit 1
+                fi
