@@ -10,10 +10,9 @@ jobs:
     steps:
       - name: Display the error message
         run: |
-          echo "GITHUB_WORKFLOW:$GITHUB_WORKFLOW"
-          echo "GITHUB_EVENT_NAME:$GITHUB_EVENT_NAME"
-          echo "GITHUB_EVENT_PATH:$GITHUB_EVENT_PATH"
-          echo "GITHUB_WORKSPACE:$GITHUB_WORKSPACE"
-          echo "GITHUB_SHA:$GITHUB_SHA"
-          echo "GITHUB_REF:$GITHUB_REF"
-          echo "GITHUB_HEAD_REF:$GITHUB_HEAD_REF"
+ echo ${GITHUB_HEAD_REF}
+                if [[ ${GITHUB_HEAD_REF} != *"CCOE"* ]]
+                then
+                  echo "ERROR: Incorrect branch name. Please amend branch name and try again. Correct branch name should start with JiraPro story number (CCOE or ccoe or CCoE)"
+                  exit 1
+                fi
