@@ -2,7 +2,7 @@ name: Branch Name
 on:
   push:
     branches-ignore:
-      - '[C-c][C-c][O-o][E-e]*'
+      - '[Cc][Cc][Oo][Ee]*'
       - 'master'
       - 'main'
 jobs:
