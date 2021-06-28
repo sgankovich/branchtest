@@ -15,4 +15,4 @@ jobs:
       - name: Display the error message
         run: |
                 echo "ERROR: Incorrect branch name. Please amend branch name and try again. Correct branch name should start with JiraPro story number (CCOE or ccoe or CCoE)"
-                core.error
+                core.setFailed
