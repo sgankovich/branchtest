@@ -1,0 +1,17 @@
+name: Branch Name
+on:
+  push:
+    branches-ignore:
+      - 'CCoE*'
+      - 'CCOE*'
+      - 'ccoe*'
+      - 'master'
+jobs:
+  branch_name:
+    runs-on: ubuntu-latest
+    name: Branch Name
+    steps:
+      - name: Display the error message
+        run: |
+                echo "ERROR: Incorrect branch name. Please amend branch name and try again. Correct branch name should start with JiraPro story number (CCOE or ccoe or CCoE)"
+                core.error
