@@ -3,8 +3,6 @@ on:
   push:
     branches-ignore:
       - '[C-c][C-c][O-o][E-e]*'
-      - 'feature/[C-c][C-c][O-o][E-e]*'
-      - 'fix/[C-c][C-c][O-o][E-e]*'
       - 'master'
       - 'main'
 jobs:
